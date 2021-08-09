@@ -2,7 +2,11 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const fetch = require("node-fetch");
-require("dotenv").config();
+
+if (process.env.NODE_ENV !== 'production') {
+
+    require("dotenv").config();
+}
 
 
 app.use(express.static("public"));
